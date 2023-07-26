@@ -73,9 +73,9 @@
                                 <p>
                                     {{ $car->description }}
                                 </p>
-                                <p>
+                                {{-- <p>
                                     <a href="{{ route('car.show', $car) }}" class="btn btn-primary btn-sm">Sewa Sekarang</a>
-                                </p>
+                                </p> --}}
                             </div>
                         </div>
                     </div>

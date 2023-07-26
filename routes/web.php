@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\UserController;
 
 use App\Http\Controllers\Platform\RentCarController;
 use App\Http\Controllers\Platform\LandingController;
+use App\Http\Controllers\ProfileController;
 
 
 
@@ -49,10 +50,12 @@ Route::group(['middleware' => ['auth','is_admin'],'prefix' => 'admin', 'as'=>'ad
     Route::resource('models', ModelController::class);
     Route::resource('cars', CarController::class);
     Route::resource('users', UserController::class);
+    
     Route::get('rents', [RentController::class, 'index'])->name('rents.index');
     Route::get('rents/{id}/edit', [RentController::class, 'edit'])->name('rents.edit');
     Route::put('rents/{id}', [RentController::class, 'update'])->name('rents.update');
     Route::delete('rents/{id}', [RentController::class, 'delete'])->name('rents.destroy');
-    // Route::get('profile',[ProfileController::class, 'show'])->name('profile.show');
-    // Route::put('profile',[ProfileController::class, 'update'])->name('profile.update');
+    
+    Route::get('profile',[ProfileController::class, 'show'])->name('profile.show');
+    Route::put('profile',[ProfileController::class, 'update'])->name('profile.update');
 });

@@ -71,7 +71,7 @@
                                 <li><a href="{{ url('/rents') }}" class="nav-link">Daftar Sewa</a></li>
                                 </li>
                                 <li class="nav-item">
-                                    <a id="navbarDropdown" class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a id="navbarDropdown" class="nav-link" href="{{route('home')}}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->name }}
                                     </a>
                                 </li>

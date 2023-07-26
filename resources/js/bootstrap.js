@@ -1,4 +1,4 @@
-import Popper from 'popper.js'
+import Popper from '@popperjs/core/dist/umd/popper.js'
 import jQuery from 'jquery'
 import axios from 'axios'
 import 'bootstrap'

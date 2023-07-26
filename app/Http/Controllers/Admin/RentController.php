@@ -37,9 +37,9 @@ class RentController extends Controller
             'status' => 'required',
         ])->validate();
         $rent = Rent::where('id', $request->id)->with('cars')->withTrashed()->first();
-       
+        $rent->status = $request->status;
+            
         if($rent->status === 'CANCEL' && $request->status!=='CANCEL'){
-            $rent->status = $request->status;
             $rent->restore();     
         }
 

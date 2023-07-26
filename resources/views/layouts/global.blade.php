@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="{{ asset('css/fontawesome.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('css/adminlte.min.css') }}">
+
+    @vite('resources/js/app.js')
+    <!-- REQUIRED SCRIPTS -->
+
+    <!-- AdminLTE App -->
+    <script src="{{ asset('js/adminlte.min.js') }}" defer></script>
     @stack('style-alt')
 </head>
 <body class="hold-transition sidebar-mini">
@@ -32,10 +38,10 @@
                         {{ auth()->user()->name }}
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" style="left: inherit; right: 0px;">
-                        {{-- <a href="{{ route('admin.profile.show') }}" class="dropdown-item">
-                        <i class="mr-2 fas fa-file"></i>
-                        {{ __('My profile') }}
-                        </a> --}}
+                        <a href="{{ route('admin.profile.show') }}" class="dropdown-item">
+                            <i class="mr-2 fas fa-file"></i>
+                            {{ __('My profile') }}
+                        </a>
                         <div class="dropdown-divider"></div>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
@@ -55,7 +61,7 @@
             <!-- Brand Logo -->
             <a href="/" class="brand-link">
                 <img src="{{ asset('images/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
+                <span class="brand-text font-weight-light">Admin CMS</span>
             </a>
 
             @include('layouts.navigation')
@@ -118,11 +124,7 @@
     <!-- ./wrapper -->
 
 
-    @vite('resources/js/app.js')
-    <!-- REQUIRED SCRIPTS -->
 
-    <!-- AdminLTE App -->
-    <script src="{{ asset('js/adminlte.min.js') }}" defer></script>
     @stack('script-alt')
 </body>
 </html>

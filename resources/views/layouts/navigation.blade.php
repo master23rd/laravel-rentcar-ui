@@ -3,6 +3,7 @@
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
+            <a href="{{ route('homepage') }}" class="d-block">Go To Platform</a>
             {{-- <a href="{{ route('admin.profile.show') }}" class="d-block">{{ Auth::user()->name }}</a> --}}
         </div>
     </div>
@@ -61,6 +62,16 @@
                         {{ __('Rental') }}
                     </p>
                 </a>
+            </li>
+
+            <li class="nav-item">
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); this.closest('form').submit();">
+                        <i class="mr-2 fas fa-sign-out-alt"></i>
+                        {{ __('Log Out') }}
+                    </a>
+                </form>
             </li>
         </ul>
     </nav>
